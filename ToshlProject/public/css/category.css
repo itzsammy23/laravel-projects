@@ -1,0 +1,29 @@
+body{
+    background-color: #fff;
+}
+
+.compose {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.category table tr {
+    color: #000d1a;
+    text-align: center;
+    border: 1px solid #000d1a;
+}
+.category table tr th {
+    padding: 8px;
+    border-right: #000d1a;
+}
+
+.category table tr td {
+    padding: 15px;
+}
+
+.cover {
+    margin-bottom: 30px;
+}
+
+.covered {
+    margin-bottom: 45px;
+}
