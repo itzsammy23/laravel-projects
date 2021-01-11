@@ -15,17 +15,17 @@ class CreateSongsTable extends Migration
     {
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('playlist_id')->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('artist');
             $table->string('album');
             $table->string('release_year');
             $table->string('genre');
-            $table->string('cover_art');
+            $table->string('cover_art')->nullable();
             $table->string('song_file');
             $table->timestamps();
 
-            $table->index('playlist_id');
+            $table->index('user_id');
         });
     }
 

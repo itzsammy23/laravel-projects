@@ -9,80 +9,84 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/songplayer.js') }}" defer></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.2.0/dist/amplitude.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Styles -->
+    <link href="{{ asset('slick/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('slick/slick-theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/music.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/music.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <header>
+            <nav>
+                <div>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
+                    <div class="brand">
+                        <h3>Gbedu</h3>
+                    </div>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                    <div class="notifs">
+                        <label class="switch">
+                            <input type="checkbox" id="mode-toggler">
+                            <span class="slider round"></span>
+                        </label>
+                        <ul>
+                            <li>
+                                <div class="search-box">
+                                    <input type="text" name="" class="search-txt" placeholder="Search..."/>
+                                    <a class="search-btn">
+                                        <i class="bx bx-search-alt" aria-hidden="true"></i>
                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
                                 </div>
                             </li>
-                        @endguest
-                    </ul>
+                            <li>
+                                <a href="#" id="modal"><i class='bx bxs-user' aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+                <div id="loginModal" class="modal">
+
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form action="get">
+                            <input type="text" name="Username" id="user" placeholder="Username..." aria-placeholder="Username" required>
+                            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                            <input type="submit" value="Log in">
+                            <p>Don't have account? <a href="#">Sign up</a> </p>
+                        </form>
+                    </div>
+
+                </div>
+
+            </nav>
+        </header>
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+    <!-- Scripts -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="{{ asset('js/slick.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.2.0/dist/amplitude.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+    <script type="text/javascript" src="{{ asset('amplitudejs/dist/visualizations/michaelbromley.js') }}"></script>
+    <script src="{{ asset('js/songplayer.js') }}"></script>
+    <script src="{{ asset('js/testplayer.js') }}"></script>
+   {{-- <script src="{{ asset('js/app.js') }}" defer></script>--}}
 </body>
 </html>

@@ -13,11 +13,25 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -145,15 +159,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage/cover_art" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage/songs" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Samuel O Kuteyi\Soundwave\public\storage\cover_art" />
       <recent name="C:\Users\Samuel O Kuteyi\Soundwave\public\storage\songs" />
+      <recent name="C:\Users\Samuel O Kuteyi\Soundwave\public" />
+      <recent name="C:\Users\Samuel O Kuteyi\Soundwave\public\storage\cover_art" />
       <recent name="C:\Users\Samuel O Kuteyi\Soundwave\resources\views\songs" />
+      <recent name="C:\Users\Samuel O Kuteyi\Soundwave\public\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -183,7 +199,28 @@
       <workItem from="1606246653690" duration="35000" />
       <workItem from="1606247193879" duration="3411000" />
       <workItem from="1606290873118" duration="1045000" />
-      <workItem from="1606294746763" duration="10446000" />
+      <workItem from="1606294746763" duration="11781000" />
+      <workItem from="1606320349953" duration="6285000" />
+      <workItem from="1606329203458" duration="152000" />
+      <workItem from="1606329934647" duration="882000" />
+      <workItem from="1606331622319" duration="31992000" />
+      <workItem from="1606505933905" duration="6685000" />
+      <workItem from="1606546803573" duration="13262000" />
+      <workItem from="1606582396147" duration="12000" />
+      <workItem from="1606583049748" duration="5000" />
+      <workItem from="1606586474753" duration="4252000" />
+      <workItem from="1608548392675" duration="5224000" />
+      <workItem from="1608566504524" duration="6821000" />
+      <workItem from="1608575140602" duration="9894000" />
+      <workItem from="1608667398608" duration="7183000" />
+      <workItem from="1608712762739" duration="621000" />
+      <workItem from="1608713908844" duration="6953000" />
+      <workItem from="1608723218404" duration="2173000" />
+      <workItem from="1608725867014" duration="3575000" />
+      <workItem from="1608729989838" duration="6355000" />
+      <workItem from="1608740014216" duration="2783000" />
+      <workItem from="1608797812841" duration="420000" />
+      <workItem from="1610017808594" duration="122017000" />
     </task>
     <servers />
   </component>
@@ -191,10 +228,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="349" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605907915080">
+    <state x="349" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606507840143">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="349" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1605907915080" />
+    <state x="349" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606507840143" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606324359080">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606324359080" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1605904909618">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -203,13 +244,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="549" y="230" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1366.728@0.0.1366.728" timestamp="1606246531285" />
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1606306250838">
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1610197416492">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606306250838" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606306338561">
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1610197416492" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1610231939495">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606306338561" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1610231939495" />
   </component>
 </project>

@@ -46,8 +46,8 @@ class User extends Authenticatable
         return $this->hasMany(Playlist::class);
     }
 
-    public function songs()
+    public function upload()
     {
-        return $this->belongsToMany(Song::class);
+        return $this->hasMany(Song::class);
     }
 }

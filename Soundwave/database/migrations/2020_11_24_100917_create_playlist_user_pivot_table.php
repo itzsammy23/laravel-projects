@@ -11,7 +11,7 @@ class CreatePlaylistUserPivotTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function functionup()
     {
         Schema::create('playlist_user', function (Blueprint $table) {
             $table->id();

@@ -13,24 +13,7 @@ class SongController extends Controller
 {
     public function relate()
     {
-            $user = User::find(1);
-          $playlist = Song::create([
-                'name' => 'Will (Remix)',
-                'artist' => 'Joyner Lucas ft Will Smith',
-                'album' => 'Single',
-                'release_year' => '2020',
-                'genre' => 'Pop',
-                'cover_art' => '2020-05-21-22-25-13--1078945905.jpg',
-                'song_file' => 'joyner_lucas_will_smith_will_remix_mp3_31130.mp3'
-            ]);
-
-       /* $song_file = $user->playlist()->where('name', 'TestPlaylist')->get();
-
-            for ($i = 0; $i < count($song_file); $i++){
-               echo $song_file[$i]['song_id'];
-            }*/
-
-       dd($playlist);
+       dd(session('user_id'));
     }
 
     public function get()
@@ -59,7 +42,8 @@ class SongController extends Controller
 
     public function index()
     {
-        return view('songs.index');
+        $songs = Song::all();
+        return view('songs.index', compact('songs'));
     }
 
     public function find(Request $request)
@@ -73,6 +57,14 @@ class SongController extends Controller
         return response()->file($path, $headers);
     }
 
+    public function findSong(Request $request)
+    {
+        $song_id = $request->route("song_id");
+        $song_name = Song::where('id', $song_id)->value("song_file");
+
+        return response()->json(["name" => $song_name], 200);
+    }
+
     public function check(Request $request)
     {
         $search_value = $request->add_new_song;
@@ -81,53 +73,40 @@ class SongController extends Controller
         return response()->json(['songs' => $songs], 200);
     }
 
-    public function create(Request $request)
+    public function upload(Request $request)
     {
-        $playlist_name = $request->playlist_name;
-        DB::table('playlist_user')->insert([
-            "user_id" => 1,
-            "playlist_name" => $playlist_name
-        ]);
-    }
-
-    public function add(Request $request)
-    {
-        $song_name = $request->song_name;
-        $playlist_name = $request->playlist_name;
         $user = User::find(1);
+       $data = [
+           "name" =>  $request->song_name,
+           "artist" => $request->artist,
+           "genre" => $request->genre,
+           "album" => $request->album,
+           "release_year" => $request->release_year,
+           "song_file" => $request->file->getClientOriginalName(),
+           "cover_art" => ""
+       ];
 
-      $song_id = Song::where("name", $song_name)->value("id");
+       $original_name = $request->file('file')->getClientOriginalName();
+       $request->file->storeAs("songs", "{$original_name}", "public");
 
-      $user->playlist()->create([
-                "song_id" => $song_id,
-                "name" => $playlist_name
-      ]);
+       if ($request->cover_art){
+           $original_cover =  $request->file('cover_art')->getClientOriginalName();
+          $request->cover_art->storeAs("cover_art", "{$original_cover}", "public");
+
+        $cover_art = ["cover_art" => $original_cover];
+       }
+
+       $user->upload()->create(array_merge(
+           $data,
+           isset($cover_art) ? $cover_art : []
+       ));
+
+       return  response()->json(["success" =>  $request->file('file')->isValid()],  200);
     }
 
-    public function view()
+    public function player()
     {
-        $playlists = DB::table('playlist_user')->where('user_id', 1)->get();
-
-        return response()->json($playlists, 200);
+        return view("songs.player");
     }
 
-    public function playlist(Request $request)
-    {
-        $playlist = $request->route('playlist');
-        $values = Playlist::where('name', $playlist)->get();
-        $songarray = [];
-        $i = 0;
-
-        foreach ($values as $value) {
-            $id = $value->song_id;
-            $songs = Song::where('id', $id)->get();
-
-            foreach ($songs as $song){
-                $songarray[$i] = $song;
-                $i++;
-            }
-        }
-
-        return response()->json($songarray, 200);
-    }
 }
