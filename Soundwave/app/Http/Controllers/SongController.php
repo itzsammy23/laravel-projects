@@ -13,12 +13,12 @@ class SongController extends Controller
 {
     public function relate()
     {
-       dd(session('user_id'));
+       dd(base_path('public_html'));
     }
 
     public function get()
     {
-        $songs = Song::all();
+        $songs = Song::orderBy("id", "desc")->get();
 
         return response()->json(['songs' =>  $songs], 200)->withHeaders([
             "Content-Type" => "application/json",
@@ -38,12 +38,6 @@ class SongController extends Controller
             "Content-Range" => $range,
             "Access-Control-Allow-Origin" => "*",
         ]);
-    }
-
-    public function index()
-    {
-        $songs = Song::all();
-        return view('songs.index', compact('songs'));
     }
 
     public function find(Request $request)
@@ -67,7 +61,7 @@ class SongController extends Controller
 
     public function check(Request $request)
     {
-        $search_value = $request->add_new_song;
+        $search_value = $request->value;
         $songs = Song::where("name", "like", "{$search_value}%")->get();
 
         return response()->json(['songs' => $songs], 200);
@@ -75,19 +69,24 @@ class SongController extends Controller
 
     public function upload(Request $request)
     {
-        $user = User::find(1);
+        $user_id = $request->user_id;
+        $user = User::find($user_id);
+        $request_song_name = Str::of($request->song_name)->lower();
+        $song_name = Str::of($request_song_name)->replace(" ", "-");
+        $song_file = $song_name."_".time().".mp3";
        $data = [
            "name" =>  $request->song_name,
            "artist" => $request->artist,
            "genre" => $request->genre,
            "album" => $request->album,
            "release_year" => $request->release_year,
-           "song_file" => $request->file->getClientOriginalName(),
+           "song_file" => $song_file,
            "cover_art" => ""
        ];
 
-       $original_name = $request->file('file')->getClientOriginalName();
-       $request->file->storeAs("songs", "{$original_name}", "public");
+
+
+       $request->file->storeAs("songs", "{$song_file}", "public");
 
        if ($request->cover_art){
            $original_cover =  $request->file('cover_art')->getClientOriginalName();
@@ -107,6 +106,56 @@ class SongController extends Controller
     public function player()
     {
         return view("songs.player");
+    }
+
+    public function download(Request $request)
+    {
+        $song_name = Str::of($request->route("song"))->replace("-", " ");
+        $song_file = Song::where("name", $song_name)->value("song_file");
+
+        $path = "storage/songs/".$song_file;
+        $song = $request->route("song").".mp3";
+        return response()->download($path, $song);
+    }
+
+    public function get_file(Request $request)
+    {
+        $song_name = Str::of($request->route("song"))->replace("-", " ");
+        $song_file = Song::where("name", $song_name)->value("song_file");
+
+        return response()->json(["file" => $song_file], 200);
+    }
+
+    public function listen(Request $request)
+    {
+
+        $songs = Song::orderBy("id", "desc")->limit(5)->get();
+        $song_stripped = Str::of($request->route("song"))->replace("-", " ");
+        $artist_stripped = Str::of($request->route("artist"))->replace("-", " ");
+        $artiste = splitName($artist_stripped);
+        $song = splitName($song_stripped);
+        $db_cover_art = Song::where([
+            ["name", "$song"],
+            ["artist", "$artiste"]
+        ])->value("cover_art");
+
+
+        if ($db_cover_art === "" || $db_cover_art === null) {
+            $cover_art = "/storage/cover_art/record-33583_640.png";
+        }else {
+            $cover_art = "/storage/cover_art/" .$db_cover_art;
+        }
+
+        $data = [
+            "has_song" => true,
+            "song" => $song,
+            "view_mode" => 5,
+            "cover_art" => $cover_art,
+            "artist" => $artiste,
+            "has_item" => false
+            ];
+
+        return view("songs.index", compact("songs", "data"));
     }
 
 }

@@ -13,9 +13,35 @@ class PlaylistController extends Controller
 {
     public function view()
     {
-        $playlists = DB::table('playlist_user')->where('user_id', 1)->get();
+        $user_id = session("user_id");
+        $rows = DB::table('playlist_user')->where('user_id', $user_id)->count();
 
-        return response()->json($playlists, 200);
+        if ($user_id === null) {
+            return response()->json(["session_expired" => "Your session has expired", "user_id" => $user_id], 200);
+        } else{
+            if ($rows == 0){
+                return response()->json(["no_results" => "No playlists created", "user_id" => $user_id], 200);
+            } else{
+
+                $playlists = DB::table('playlist_user')->where('user_id', $user_id)->get();
+                $playlist_array = [];
+                $i = 0;
+
+                foreach ($playlists as $playlist) {
+                    $song_count = Playlist::where("name", $playlist->playlist_name)->count();
+                    $playlist_array[$i] = [
+                        "name" => $playlist->playlist_name,
+                        "song_count" => $song_count,
+                        "playlist_art" => $playlist->playlist_art
+                    ];
+                    $i++;
+                }
+
+                return response()->json($playlist_array, 200);
+            }
+        }
+
+
     }
 
     public function show(Request $request)
@@ -53,23 +79,89 @@ class PlaylistController extends Controller
     public function create(Request $request)
     {
         $playlist_name = $request->playlist_name;
-        DB::table('playlist_user')->insert([
-            "user_id" => 1,
-            "playlist_name" => $playlist_name
-        ]);
+        $playlist_art = $request->playlist_art;
+        $user_id = session("user_id");
+        $data = [
+            "user_id" => $user_id,
+            "playlist_name" => $playlist_name,
+            "playlist_art" => ""
+        ];
+
+        if ($playlist_art != null) {
+            $art = $request->file("playlist_art")->getClientOriginalName();
+            $playlist_art->storeAs("cover_art", "$art", "public");
+
+            $art_array = ["playlist_art" => $art];
+        }
+        DB::table('playlist_user')->insert(array_merge($data,
+        isset($art_array) ? $art_array : []
+        ));
     }
 
     public function add(Request $request)
     {
         $song_name = $request->song_name;
         $playlist_name = $request->playlist_name;
-        $user = User::find(1);
+        $user_id = session("user_id");
+        $user = User::find($user_id);
 
         $song_id = Song::where("name", $song_name)->value("id");
 
         $user->playlist()->create([
             "song_id" => $song_id,
             "name" => $playlist_name
+        ]);
+    }
+
+    public function add_song(Request $request)
+    {
+        $songs = $request->songs;
+        $playlist_name = $request->playlist_name;
+        $user_id =
+            n("user_id");
+        $user = User::find($user_id);
+
+        for ($i = 0; $i < count($songs); $i++) {
+            $song_id = Song::where("name", $songs[$i])->value("id");
+
+            $user->playlist()->create([
+                "song_id" => $song_id,
+                "name" => $playlist_name
+            ]);
+        }
+
+        return response()->json(["success" => "Action successful"], 200);
+    }
+
+    public function update_art(Request $request)
+    {
+        $image = $request->file("image")->getClientOriginalName();
+        $playlist_name = $request->playlist_name;
+        $user_id = $request->user_id;
+        $request->image->storeAs("cover_art", "{$image}", "public");
+
+        DB::table("playlist_user")->where([
+            ["user_id", $user_id],
+            ["playlist_name", $playlist_name]
+        ])->update(["playlist_art" => $image]);
+
+        return response()->json(["playlist_art" => "/storage/cover_art/".$image], 200);
+    }
+
+    public function update_name(Request $request)
+    {
+        $old_playlist_name = $request->old_playlist_name;
+        $new_playlist_name = $request->new_playlist_name;
+        $user_id = $request->user_id;
+        $user = User::find($user_id);
+
+        DB::table("playlist_user")->where([
+            ["user_id", $user_id],
+            ["playlist_name", $old_playlist_name]
+        ])->update(["playlist_name" => $new_playlist_name]);
+
+        $user->playlist()->where("name", $old_playlist_name)->update([
+            "name" => $new_playlist_name
         ]);
     }
 
@@ -83,5 +175,43 @@ class PlaylistController extends Controller
         ];
         return response()->file($path, $headers);
     }
+
+    public function test()
+    {
+        return view("songs.tester");
+    }
+
+    public function playlist_delete(Request $request)
+    {
+        $playlist_name = $request->playlist_name;
+        $user_id = $request->user_id;
+        $user = User::find($user_id);
+
+        $user->playlist()->where("name", $playlist_name)->delete();
+
+        DB::table("playlist_user")->where([
+            ["user_id", $user_id],
+            ["playlist_name", $playlist_name]
+        ])->delete();
+    }
+
+    public function delete(Request $request)
+    {
+        $song_name = $request->song_name;
+        $playlist_name = $request->playlist_name;
+        $user_id = $request->user_id;
+        $song_id = Song::where('name', $song_name)->value("id");
+
+        Playlist::where([
+            ["song_id", $song_id],
+            ["user_id", $user_id],
+            ["name", $playlist_name]
+        ])->delete();
+
+        return response()->json([
+            "deleted" => "Successfully deleted",
+        ], 200);
+    }
+
 
 }

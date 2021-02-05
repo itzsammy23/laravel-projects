@@ -17,7 +17,7 @@ class UserController extends Controller
             "string" => "This field supports only strings",
             "max" => "Entry too long",
             "email" => "The email address entered is not valid",
-            "unique" => "This email address is already registered",
+            "unique" => "This credential is is already registered",
             "min" => "Your password must be at least 8 characters",
             "confirmed" => "Passwords don't match"
         ];
@@ -26,7 +26,7 @@ class UserController extends Controller
             $request->all(),
 
             [
-                "name" => ["required", "string", "max:255"],
+                "username" => ["required", "string", "max:255", "unique:users"],
                 "email" => ["required", "string", "email", "max:255", "unique:users"],
                 "password" => ["required", "string", "min:8", "confirmed"]
             ],
@@ -37,28 +37,29 @@ class UserController extends Controller
         if ($validator->fails()) {
             $response = $validator->messages();
         } else {
+           /* $response = ["username" => $request->username, "email" => $request->email, "password" => $request->password];*/
             User::create([
-                "name" => $request->name,
+                "username" => $request->username,
                 "email" => $request->email,
                 "password" => Hash::make($request->password)
             ]);
-            $response = ["success" => "Account successfully created"];
+            $user_id = User::where('email', $request->email)->value('id');
+            session(["user_id" => $user_id]);
+            $response = ["success" => "Account successfully created", "user_id" => session("user_id")];
         }
 
-        $user_id = User::where('email', $request->email)->value('id');
-        session(["user_id" => $user_id]);
+
 
         return response()->json($response, 200);
     }
 
     public function login(Request $request)
     {
-        $user_email = User::where('email', $request->email)->value('password');
+        $user_password = User::where('email', $request->email)->value('password');
         $user_id = User::where('email', $request->email)->value('id');
 
         $messages = [
             'required' => 'The :attribute field is required.',
-            'email' => 'The email address entered is not valid.',
             'exists' => 'These credentials do not match our records.',
         ];
 
@@ -67,8 +68,8 @@ class UserController extends Controller
 
             [
                 'email' => ['required', 'email', 'exists:mysql.users,email'],
-                'password' => ['required', function ($attribute, $value, $fail) use ($user_email) {
-                    if(!\Hash::check($value, $user_email)) {
+                'password' => ['required', function ($attribute, $value, $fail) use ($user_password) {
+                    if(!\Hash::check($value, $user_password)) {
                         return $fail(__('Your password entry is incorrect.'));
                     }
                 }],
@@ -82,7 +83,7 @@ class UserController extends Controller
             $Response = $validator->messages();
         } else {
             session(["user_id" => $user_id]);
-            $Response = ["success" => "Action successful"];
+            $Response = ["success" => "Action successful", "user_id" => $user_id];
         }
 
         return response()->json($Response, 200);

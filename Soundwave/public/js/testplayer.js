@@ -72,7 +72,6 @@ $(document).ready(function () {
             $(".full-music-player .alert").html("");
             $(".full-music-player .alert").append("<p>Repeating all songs</p>");
             $(".amplitude-repeat").trigger("click");
-            $(".bx-repost").css("color",  `rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]})`)
             repeat = "all";
         } else if (repeat === "all") {
             $(".full-music-player .alert").html("");
@@ -84,7 +83,6 @@ $(document).ready(function () {
         } else{
             $(".full-music-player .alert").html("");
             $(".full-music-player .alert").append("<p>Repeat off</p>");
-            $(".bx-repost").css("color", "#c3c3c3")
             $(".amplitude-repeat-song").trigger("click");
             $(".repeat-indicator").hide()
             repeat = "off";
