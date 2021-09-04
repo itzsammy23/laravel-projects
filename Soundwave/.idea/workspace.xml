@@ -2,160 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085d5796-b8ed-4ef0-ad39-ae941ef86fb1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.idea/Soundwave.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/.styleci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Console/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Exceptions/Handler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/PlaylistController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/SongController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Controllers/UserController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Middleware/Authenticate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Middleware/PreventRequestsDuringMaintenance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Middleware/TrustHosts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Models/Playlist.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Models/Song.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Models/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Providers/AppServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Providers/AuthServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Providers/EventServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/app/Providers/RouteServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/bootstrap/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/broadcasting.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/cache.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/cors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/filesystems.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/hashing.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/logging.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/mail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/queue.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/services.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/session.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/config/view.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/factories/UserFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/migrations/2020_11_20_174853_create_songs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/migrations/2020_11_20_175041_create_playlists_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/migrations/2020_11_23_172028_creates_song_users_pivot_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/migrations/2020_11_24_092256_creates_playlist_song_pivot_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/migrations/2020_11_24_100917_create_playlist_user_pivot_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/database/seeders/DatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/dist/amplitude.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/dist/amplitude.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/dist/amplitude.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/dist/visualizations/bar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/dist/visualizations/frequencyanalyzer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/dist/visualizations/michaelbromley.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/dist/visualizations/template.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/amplitudejs/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/css/music.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/js/slick.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/js/songplayer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/js/testplayer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/mix-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/owlcarousel/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/owlcarousel/owl.carousel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/owlcarousel/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/owlcarousel/owl.theme.default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/ajax-loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/config.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/fonts/slick.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/fonts/slick.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/fonts/slick.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/fonts/slick.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/slick-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/slick-theme.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/slick-theme.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/slick.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/slick.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/slick.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/slick.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/slick/slick.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/public/web.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/lang/en/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/lang/en/pagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/lang/en/passwords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/lang/en/validation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/sass/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/sass/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/auth/login.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/auth/register.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/auth/verify.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/songs/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/songs/player.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/routes/api.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/routes/channels.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/routes/console.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/routes/web.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/server.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/storage/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/storage/app/public/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/storage/framework/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/storage/framework/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/storage/framework/cache/data/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/storage/framework/sessions/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/storage/framework/testing/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/storage/framework/views/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/storage/logs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/tests/CreatesApplication.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/tests/TestCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/tests/Unit/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Soundwave/webpack.mix.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +39,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -404,6 +252,7 @@
       <workItem from="1612263739729" duration="23533000" />
       <workItem from="1612437937462" duration="22789000" />
       <workItem from="1612528747957" duration="638000" />
+      <workItem from="1612813004350" duration="1007000" />
     </task>
     <servers />
   </component>

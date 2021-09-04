@@ -1,0 +1,221 @@
+:root {
+    --darker-blue: #173570;
+    --sea-blue: #0f3eb6;
+    --lighter-blue: #31d5ec;
+    --border-color: #f0f6ff;
+}
+
+*{
+	margin:  0;
+	padding:  0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Nunito', sans-serif;
+}
+
+
+.form__holder{
+	width:  500px;
+	margin:  50px auto;
+	padding:  30px 18px;
+	border-radius:  12px;
+	box-shadow: 0 2px 8px rgba(15,62,182, .10);
+}
+
+
+.button{
+    padding: 11px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    font-family: "Nunito", sans-serif;
+    transition: .2s ease;
+    font-weight: 600;
+}
+
+.form__holder .button{
+	 width:  100%;
+}
+
+.button__blue{
+    background: var(--sea-blue);
+    color: #ffffff;
+    border: 1px solid var(--sea-blue);
+}
+
+.button__blue:hover{
+    background: transparent;
+    color: var(--sea-blue);
+    transition:  .2s ease-in;
+}
+
+.button:hover{
+	cursor: pointer;
+}
+.button:focus{
+	outline:  0;
+}
+
+.button__red__alt{
+    color: #EF4444;
+    border: 1px solid #EF4444;
+    background: transparent;
+}
+
+.button__red__alt:hover{
+    background: #EF4444;
+    color: #ffffff;
+}
+
+.input__group{
+    margin-bottom: 20px;
+}
+
+
+input{
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    padding:  8px 22px;
+    color: var(--darker-blue);
+    margin-top:  6px;
+    font-family: "Nunito", sans-serif;
+}
+
+input:focus{
+    outline: 0;
+    border: 1px solid var(--darker-blue);
+    box-shadow: 0 2px 8px rgba(15,62,182, .08);
+}
+
+input::placeholder{
+    color: var(--darker-blue);
+}
+
+label{
+    color: var(--darker-blue);
+    font-weight: 600;
+    font-size:  1rem;
+}
+
+.table__container{
+	width: 65%;
+    margin:  30px auto;
+}
+
+table{
+    width:  100%;
+    display: none;
+}
+
+table tbody tr td, table thead tr th{
+    padding: 10px 16px;
+}
+
+table thead tr th {
+    color: var(--darker-blue);
+    font-weight: 700;
+    border: 1px solid #f0f6ff;
+    font-size:  0.9rem;
+    text-align: left;
+}
+
+table tbody tr td{
+    border-left: 1px solid #f0f6ff;
+    border-right: 1px solid #f0f6ff;
+    border-bottom: 1px solid #f0f6ff;
+    color: var(--darker-blue);
+    font-size:  0.85rem;
+}
+
+table tbody tr:hover{
+    background: #f0f6ff;
+    cursor: pointer;
+}
+
+table tbody tr:last-child td{
+	border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+table tbody tr:last-child td:nth-child(4),
+table tbody tr:last-child td:nth-child(5){
+	font-weight:  600;
+	font-size: .9rem;
+}
+
+table tbody tr:last-child td:nth-child(4){
+	text-align: right;
+	padding:  10px 0;
+}
+
+table tbody tr td:last-child{
+	font-weight:  700;
+	text-align: center;
+	color:  var(--sea-blue);
+}
+table tbody tr td:last-child:hover{
+	text-decoration: underline;
+}
+
+.edit__form{
+	width:  35%;
+	margin:  30px auto;
+	display: none;
+}
+
+.edit__form .flex__group{
+	display: flex;
+}
+
+.edit__form .flex__group .input__group{
+	width: 48%;
+}
+
+.edit__form .flex__group .input__group:last-child{
+	margin-left: auto;
+}
+
+.edit__form .button__container{
+	display: flex;
+}
+
+.edit__form .button__container .button__red__alt{
+	margin-left: auto;
+}
+
+
+@media screen and (max-width:  650px) {
+	.form__holder{
+		width:  85%;
+	}
+
+	.edit__form{
+		width:  80%;
+	}
+
+	.table__container{
+		width:  90%;
+		overflow: auto;
+		white-space: nowrap;
+	}
+}
+
+@media screen and (min-width:  650px) and (max-width:  1024px) {
+	.form__holder{
+		width:  60%;
+	}
+
+	.edit__form{
+		width:  65%;
+	}
+
+	.table__container{
+		width:  80%;
+		overflow: auto;
+		white-space: nowrap;
+	}
+}
